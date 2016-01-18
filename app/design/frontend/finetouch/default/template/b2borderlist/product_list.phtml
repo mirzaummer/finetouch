@@ -12,7 +12,7 @@
 <?php if(!$_productCollection->count()): ?>
 <p class="note-msg"><?php echo $this->__('There are no products matching the selection.') ?></p>
 <?php else: ?>
-<?php if($this->getMode()!='grid'){?><div class="page-title"><h1><?php echo $this->__("Order Form") ?></h1></div><?php }?>
+<?php if($this->getMode()!='grid'){?><div class="page-title"><h1><?php echo $this->__("Order List") ?></h1></div><?php }?>
 <div class="category-products">
     <?php echo $this->getToolbarHtml() ?>
     <?php // List mode ?>    

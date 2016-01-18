@@ -31,7 +31,9 @@
  * @see Mage_Sale_Block_Reorder_Sidebar
  */
 ?>
-<?php $_items = $this->getItems()?>
+<?php 
+return; // To omit order sidebar 
+$_items = $this->getItems()?>
 <?php if($_items): ?>
 <div class="block block-reorder">
     <div class="block-title">
