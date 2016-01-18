@@ -56,18 +56,30 @@
 		         			<a href="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(256)?>" class="zoom"><img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(52,57)?>" alt="<?php echo $_product->getName()?>" /></a>
 		         		</div>      	    						   	
 	         		</td>       
-	  		 		<td><?php echo $_product->getSku()?></td>
+	  		 		<td><?php 
+		  		 		$sku = Mage::getModel('catalog/product')->load($_product->getId())->getSku();
+		  		 		echo $sku;?>
+	  		 		</td>
 	           		<td class="name">
 	           			<a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $_productNameStripped; ?>"><?php echo $_helper->productAttribute($_product, $_product->getName() , 'name'); ?></a>
 	           		</td>
 	  				<td class="sort-price">
-	  					<?php echo $this->getPriceHtml($_product, true) ?>	  	  					
-	  					<!-- Tire price -->	  					
-	  					<?php echo  $this->getLayout()   
+	  					<?php 
+	  					$_formattedSpecialPrice = Mage::getModel('catalog/product')->load($_product->getId())->getTierPrice();
+	  					$_formattedNormalPrice = Mage::getModel('catalog/product')->load($_product->getId())->getPrice();  
+		  		 		if(isset($_formattedSpecialPrice[4]['price']))
+		  		 			echo $_formattedSpecialPrice[4]['price'];
+		  		 		else
+		  		 		{
+		  		 			echo $_formattedNormalPrice;
+		  		 		}
+	  					//echo $this->getPriceHtml($_product, true);   	  					
+	  					// Tier price  					
+	  					/*echo  $this->getLayout()   
 	  								->createBlock("b2borderlist/catalog_product_tierprices")
 	  								->setTemplate("b2borderlist/product/tierprices.phtml")
 	  								->setProduct( $product )
-	  					            ->toHtml(); ?>  					
+	  					            ->toHtml();*/ ?>  					
 	  					<!-- End of Tire prce -->	  									
 	  				</td> 
 	  				
