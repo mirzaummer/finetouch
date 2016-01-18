@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<package>
+    <name>SKJ_Meetmyteam</name>
+    <version>0.1.2</version>
+    <stability>stable</stability>
+    <license uri="http://opensource.org/licenses/osl-3.0.php">version OSL v3.0</license>
+    <channel>community</channel>
+    <extends/>
+    <summary>It is known as Team Management or Member Management or Board Management .&#xD;
+&#xD;
+Team Management is easy to display your team members for each team member group.</summary>
+    <description>Frontend Features:&#xD;
+&#xD;
+List category of team members.&#xD;
+You can easily see a list of everyone on the team including their name, designation, biography and profile picture of each member.&#xD;
+You can see a complete list of every member on the team.&#xD;
+&#xD;
+Admin Features:&#xD;
+&#xD;
+Manage category of a team.&#xD;
+Manage team members with details for each category.&#xD;
+&#xD;
+Installation/Process:&#xD;
+&#xD;
+Disable the cache before installation or refresh the cache after installation.&#xD;
+Disable the compilation and run compilation after installation.&#xD;
+You can see My Team menu in Admin after installation.&#xD;
+Create categories as required.&#xD;
+Add members for each category with member detail.&#xD;
+You can check using the URL (e.g. http://example.com/meetmyteam/) on the front-end after creating categories and its members from the Backend.&#xD;
+</description>
+    <notes>First Release</notes>
+    <authors><author><name>Sanjeev Kumar Jha</name><user>sakjha10</user><email>jha.sanjeev.in@gmail.com</email></author></authors>
+    <date>2015-07-15</date>
+    <time>17:10:36</time>
+    <contents><target name="mageskin"><dir name="frontend"><dir name="base"><dir name="default"><dir name="css"><file name="skj-myteam.css" hash="8800d4c322e00307bacd514e94b49e70"/></dir></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="SKJ_Meetmyteam.xml" hash="ff5636717a2f26da2e81845e51e9ab27"/></dir></target><target name="magedesign"><dir name="frontend"><dir name="base"><dir name="default"><dir name="template"><dir name="meetmyteam"><file name="category.phtml" hash="85a76e3d2022c5099125aa2a4cd51284"/><file name="category_box.phtml" hash="1e91b374b5143206929923020912c50b"/><file name="detail.phtml" hash="f4e28155abda88e8ef6dc0feea9c51ef"/><file name="meetmyteam.phtml" hash="2ce1ef278c791d1c8e1a775d6b895403"/></dir></dir><dir name="layout"><file name="meetmyteam.xml" hash="ad62f3d727a7e9e4e91e018dde0fc7d3"/></dir></dir></dir></dir><dir name="adminhtml"><dir name="default"><dir name="default"><dir name="layout"><file name="meetmyteam.xml" hash="43133958343482f9e62c66ba03d59726"/></dir></dir></dir></dir></target><target name="magelocal"><dir name="SKJ"><dir name="Meetmyteam"><dir name="Block"><dir name="Adminhtml"><dir name="Category"><dir name="Edit"><file name="Form.php" hash="a0e4afc0acb0349e52b0a2e1100d2314"/><dir name="Tab"><file name="Form.php" hash="57c7b71cf4342b947bbde551406686ed"/></dir><file name="Tabs.php" hash="7bbbdeca0cf30b377dc10eea06eced06"/></dir><file name="Edit.php" hash="469c1fc9633341aa5a2fd11a82758bf5"/><file name="Grid.php" hash="f3a133ad26dbdd77780144128aec6c2f"/></dir><file name="Category.php" hash="24b703d87e3970378611845596917d5b"/><dir name="Meetmyteam"><dir name="Edit"><file name="Form.php" hash="f35c94d92186fcd95d035cd208e7bc0b"/><dir name="Tab"><file name="Form.php" hash="f90e91e958caa5695f5bb2bb14ffe267"/></dir><file name="Tabs.php" hash="8999f697d85b668a66aa1c903b449c83"/></dir><file name="Edit.php" hash="4618091f20e4870e7f2d004ac68694d4"/><file name="Grid.php" hash="4e773a5229723c568d3b3eae12b2b329"/></dir><file name="Meetmyteam.php" hash="eda38dc3b3f8541fce6e57c9054cb6ce"/><dir name="Renderer"><file name="Image.php" hash="2a05f442d666879dcc123448f54d921e"/><file name="Preview.php" hash="8171809bd2a1a87b9fd3f52759448ed2"/></dir></dir><file name="Category.php" hash="60862ed334ffe34e236ae108f5c3b044"/><file name="Meetmyteam.php" hash="bcbcd05a310377706642ec02bf1e441a"/></dir><dir name="Helper"><file name="Data.php" hash="c243bcb9a48f889fc56497417da21bec"/></dir><dir name="Model"><file name="Category.php" hash="4cd23ce3b0b8204e7cb8e0b8a4ce26be"/><file name="Meetmyteam.php" hash="2bdb9919636eae66a2e97e7a106ebb52"/><dir name="Mysql4"><dir name="Category"><file name="Collection.php" hash="f2626f19f54975660aec9b1fc85f0dd0"/></dir><file name="Category.php" hash="b2378c476d8170df691745374068c914"/><dir name="Meetmyteam"><file name="Collection.php" hash="a6d4943bb60fa57d97dcbb58ce4629f2"/></dir><file name="Meetmyteam.php" hash="cf3d49b3e8861d40fbad764ba61f2707"/></dir><file name="Status.php" hash="bd8e2ed3300c4b8e940b6a529d5832e8"/><dir name="Wysiwyg"><file name="Config.php" hash="6e8364d8f1df6b715e9eb88ca42c1859"/><file name="Config.php~" hash="c086f047a6e8a05b7693e262594dfa21"/></dir></dir><dir name="controllers"><dir name="Adminhtml"><file name="CategoryController.php" hash="822e9120b3ce65897d970e879a78d859"/><file name="MeetmyteamController.php" hash="0edd1d3aff489df94c2fc28eb96099c6"/></dir><file name="IndexController.php" hash="93838a98b19a1246f631a3c6664216ae"/></dir><dir name="etc"><file name="config.xml" hash="c2d12310e9b16b73870174d05af63ea7"/></dir><dir name="sql"><dir name="meetmyteam_setup"><file name="mysql4-install-0.1.0.php" hash="4cb218488da3fa7e18b78190da3f384c"/><file name="mysql4-install-0.1.0.php~" hash="d33cd35f49046d260ad5cca71caa7761"/><file name="mysql4-upgrade-0.1.0-0.1.1.php" hash="d4b68bd4ecbb6b0877111a9291530d89"/><file name="mysql4-upgrade-0.1.0-0.1.1.php~" hash="d9755bb560aedd0899f3699df562dfd3"/></dir></dir></dir></dir></target></contents>
+    <compatible/>
+    <dependencies><required><php><min>5.1.0</min><max>6.0.0</max></php></required></dependencies>
+</package>

@@ -1,0 +1,9 @@
+a:5:{i:0;s:222:"Error in file: "/home/dev.finetouch.co.nz/public_html/app/code/community/Hetinfoway/Video/sql/video_setup/mysql4-install-0.1.0.php" - SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'hetvideo' already exists";i:1;s:1052:"#0 /home/dev.finetouch.co.nz/public_html/app/code/core/Mage/Core/Model/Resource/Setup.php(645): Mage::exception('Mage_Core', 'Error in file: ...')
+#1 /home/dev.finetouch.co.nz/public_html/app/code/core/Mage/Core/Model/Resource/Setup.php(421): Mage_Core_Model_Resource_Setup->_modifyResourceDb('install', '', '0.2.6')
+#2 /home/dev.finetouch.co.nz/public_html/app/code/core/Mage/Core/Model/Resource/Setup.php(327): Mage_Core_Model_Resource_Setup->_installResourceDb('0.2.6')
+#3 /home/dev.finetouch.co.nz/public_html/app/code/core/Mage/Core/Model/Resource/Setup.php(235): Mage_Core_Model_Resource_Setup->applyUpdates()
+#4 /home/dev.finetouch.co.nz/public_html/app/code/core/Mage/Core/Model/App.php(417): Mage_Core_Model_Resource_Setup::applyAllUpdates()
+#5 /home/dev.finetouch.co.nz/public_html/app/code/core/Mage/Core/Model/App.php(343): Mage_Core_Model_App->_initModules()
+#6 /home/dev.finetouch.co.nz/public_html/app/Mage.php(684): Mage_Core_Model_App->run(Array)
+#7 /home/dev.finetouch.co.nz/public_html/index.php(87): Mage::run('', 'store')
+#8 {main}";s:3:"url";s:70:"/index.php/admin/dashboard/index/key/334237f45210d934d9215475d7b809ea/";s:11:"script_name";s:10:"/index.php";s:4:"skin";s:7:"default";}
