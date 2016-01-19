@@ -68,11 +68,12 @@
 	  					$_formattedSpecialPrice = Mage::getModel('catalog/product')->load($_product->getId())->getTierPrice();
 	  					$_formattedNormalPrice = Mage::getModel('catalog/product')->load($_product->getId())->getPrice();  
 		  		 		if(isset($_formattedSpecialPrice[4]['price']))
-		  		 			echo $_formattedSpecialPrice[4]['price'];
+		  		 			$display_price = $_formattedSpecialPrice[4]['price'];
 		  		 		else
 		  		 		{
-		  		 			echo $_formattedNormalPrice;
+		  		 			$display_price = $_formattedNormalPrice;
 		  		 		}
+		  		 		echo Mage::helper('core')->currency($display_price, true, false);
 	  					//echo $this->getPriceHtml($_product, true);   	  					
 	  					// Tier price  					
 	  					/*echo  $this->getLayout()   
