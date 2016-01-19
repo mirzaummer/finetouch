@@ -3310,6 +3310,7 @@ body {
   }
 .page-header-nav-cvr {
     background: #30849f;
+    height: 46px;
 }
   .page-header-container {
     position: relative;
