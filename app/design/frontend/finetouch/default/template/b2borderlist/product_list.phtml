@@ -18,7 +18,7 @@
     <?php // List mode ?>    
     <?php $_iterator = 0; ?>
    	<form id="b2borderlist_submitform" method="post" action="<?php echo $this->getUrl('orderlist/cart/additems') ?>">
-		<div class="in-cart-top"><button type="submit" title="<?php echo $this->__('Add All to Cart') ?>" onclick="submitForm(this)" class="button btn-add"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button></div>
+		<div class="in-cart-top"><button type="submit" title="<?php echo $this->__('Add All to Order') ?>" onclick="submitForm(this)" class="button btn-add"><span><span><?php echo $this->__('Add to Order') ?></span></span></button></div>
    
     	<input type="hidden" name="origin" value="list"/>
     	<input type="hidden" name="base_url" id="base_url" value="<?php echo Mage::getBaseUrl() ?>" />
@@ -235,7 +235,7 @@
 	     	</tfoot>
 	    </table>	        
     	</div>    
-    	<div class="in-cart"><button type="submit" title="<?php echo $this->__('Add All to Cart') ?>" onclick="submitForm(this)" class="button btn-add"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button></div>
+    	<div class="in-cart"><button type="submit" title="<?php echo $this->__('Add All to Order') ?>" onclick="submitForm(this)" class="button btn-add"><span><span><?php echo $this->__('Add to Order') ?></span></span></button></div>
 	</form>
     
 	<script type="text/javascript">
