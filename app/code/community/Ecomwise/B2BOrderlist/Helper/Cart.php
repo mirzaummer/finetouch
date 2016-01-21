@@ -242,7 +242,7 @@ class Ecomwise_B2BOrderlist_Helper_Cart extends Mage_Core_Helper_Abstract{
                         $cartCandidates = $product->getTypeInstance(true) ->prepareForCartAdvanced(new Varien_Object($pdata), $product);
                         $candidate_errors = array();
                         if (is_string($cartCandidates)) {
-                        	Mage::getSingleton('core/session')->addError($this->__("Product %s is not added to cart: %s", $product->getName(), $cartCandidates));
+                        	Mage::getSingleton('core/session')->addError($this->__("Product %s is not added to your Order: %s", $product->getName(), $cartCandidates));
                         	$this->itemsnotadded [] = $product->getName();
                         	continue;
                         }
@@ -265,7 +265,7 @@ class Ecomwise_B2BOrderlist_Helper_Cart extends Mage_Core_Helper_Abstract{
 								$cart->addProduct($product, $pdata);
 								$this->itemsadded [] = $product->getName();
 			  			 	}catch(Exception $ex){
-			   					Mage::getSingleton('core/session')->addError($this->__("Product %s is not added to cart: %s", $product->getName(), $ex->getMessage()));
+			   					Mage::getSingleton('core/session')->addError($this->__("Product %s is not added to your Order: %s", $product->getName(), $ex->getMessage()));
 			   					$this->itemsnotadded [] = $product->getName();
 			  				}
                         }else{
@@ -308,7 +308,7 @@ class Ecomwise_B2BOrderlist_Helper_Cart extends Mage_Core_Helper_Abstract{
 		   	
 				$cart->addProduct($product, $qty);
 		   }catch(Exception $ex){
-		   		Mage::getSingleton('core/session')->addError($this->__("Product %s is not added to cart: %s", $product->getName(), $ex->getMessage()));
+		   		Mage::getSingleton('core/session')->addError($this->__("Product %s is not added to your Order: %s", $product->getName(), $ex->getMessage()));
 		   		return false;
 		   }
 		}else{
@@ -320,13 +320,13 @@ class Ecomwise_B2BOrderlist_Helper_Cart extends Mage_Core_Helper_Abstract{
 	
 	public function addReportMessages(){
 		if(count($this->itemsnotadded) == 1){
-			$strnotadded = $this->__("Product: %s is not added to cart.", $this->itemsnotadded[0]);
+			$strnotadded = $this->__("Product: %s is not added to your Order.", $this->itemsnotadded[0]);
 		}else if(count($this->itemsnotadded) > 1){
-			$strnotadded = $this->__("Products: %s are not added to cart.", implode(", ", $this->itemsnotadded));
+			$strnotadded = $this->__("Products: %s are not added to your Order.", implode(", ", $this->itemsnotadded));
 		}
 		
 		if(count($this->itemsadded) == 1){
-			$stradded = $this->__("Product: %s is added to cart.", $this->itemsadded[0]);
+			$stradded = $this->__("Product: %s is added to your Order.", $this->itemsadded[0]);
 		}else if(count($this->itemsadded) > 1){
 			$stradded = $this->__("Products: %s are added to cart.", implode(", ",$this->itemsadded));
 		}
