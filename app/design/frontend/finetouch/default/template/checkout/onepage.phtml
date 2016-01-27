@@ -27,6 +27,16 @@
 <div class="page-title">
     <h1><?php echo $this->__('Checkout') ?></h1>
 </div>
+    <?php $ol_msg = $this->getLayout()->createBlock('cms/block')->setBlockId('over-orderlimit-message')->toHtml(); ?>
+    <?php //Mage::getSingleton('core/session')->addNotice($ol_msg); ?> 
+    <?php 
+    $ol_max = Mage::getStoreConfig('payment/purchaseorder/max_order_total');
+    $ol_total = $this->helper('checkout/cart')->getQuote()->getGrandTotal();
+    if($ol_total > $ol_max)
+    {
+        echo $this->getLayout()->createBlock('core/messages')->addNotice($ol_msg)->toHtml();
+    }
+    ?>
 <script type="text/javascript" src="<?php echo $this->getJsUrl('varien/accordion.js') ?>"></script>
 <script type="text/javascript" src="<?php echo $this->getSkinUrl('js/opcheckout.js') ?>"></script>
 <script type="text/javascript" src="<?php echo $this->getSkinUrl('js/opcheckout_rwd.js') ?>"></script>

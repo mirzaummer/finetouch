@@ -32,7 +32,12 @@
  */
 ?>
 <dl class="sp-methods" id="checkout-payment-method-load">
-<?php foreach ($this->getMethods() as $_method): $_code = $_method->getCode() ?>
+<?php 
+Mage::log('2aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa');
+foreach ($this->getMethods() as $_method): 
+
+Mage::log('abcdefghijklmn');
+$_code = $_method->getCode() ?>
     <dt>
     <?php if( sizeof($this->getMethods()) > 1 ): ?>
         <input id="p_method_<?php echo $_code ?>" value="<?php echo $_code ?>" type="radio" name="payment[method]" title="<?php echo $this->htmlEscape($_method->getTitle()) ?>" onclick="payment.switchMethod('<?php echo $_code ?>')"<?php if($this->getSelectedMethodCode()==$_code): ?> checked="checked"<?php endif; ?> class="radio" />

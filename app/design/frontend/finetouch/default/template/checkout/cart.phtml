@@ -45,6 +45,16 @@
         </ul>
         <?php endif; ?>
     </div>
+    <?php $ol_msg = $this->getLayout()->createBlock('cms/block')->setBlockId('over-orderlimit-message')->toHtml(); ?>
+    <?php //Mage::getSingleton('core/session')->addNotice($ol_msg); ?> 
+    <?php 
+    $ol_max = Mage::getStoreConfig('payment/purchaseorder/max_order_total');
+    $ol_total = $this->helper('checkout/cart')->getQuote()->getGrandTotal();
+    if($ol_total > $ol_max)
+    {
+        echo $this->getLayout()->createBlock('core/messages')->addNotice($ol_msg)->toHtml();
+    }
+    ?>
     <?php echo $this->getMessagesBlock()->toHtml() ?>
     <?php echo $this->getChildHtml('form_before') ?>
     <form action="<?php echo $this->getUrl('checkout/cart/updatePost') ?>" method="post">
@@ -115,7 +125,7 @@
                         <span class="or">-<?php echo $this->__('or'); ?>-</span>
 
                         <?php if($this->getContinueShoppingUrl()): ?>
-                            <button type="button" title="<?php echo $this->__('Continue Order') ?>" class="button2 btn-continue" onclick="setLocation('<?php echo $this->getContinueShoppingUrl() ?>')"><span><span><?php echo $this->__('Continue Order') ?></span></span></button>
+                            <button type="button" title="<?php echo $this->__('Continue Order') ?>" class="button2 btn-continue" onclick="setLocation('<?php echo Mage::getBaseUrl().'ryman-order-list.html'; ?>')"><span><span><?php echo $this->__('Continue Order') ?></span></span></button>
                         <?php endif; ?>
                         <!--[if lt IE 8]>
                         <input type="hidden" id="update_cart_action_container" />
