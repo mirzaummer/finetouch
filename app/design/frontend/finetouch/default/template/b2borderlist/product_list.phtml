@@ -18,7 +18,7 @@
     <?php // List mode ?>    
     <?php $_iterator = 0; ?>
    	<form id="b2borderlist_submitform" method="post" action="<?php echo $this->getUrl('orderlist/cart/additems') ?>">
-		<div class="in-cart-top"><button type="submit" title="<?php echo $this->__('Add All to Order') ?>" onclick="submitForm(this)" class="button btn-add"><span><span><?php echo $this->__('UPDATE CURRENT ORDER') ?></span></span></button>
+		<div class="in-cart-top"><button style="display:none;" type="submit" id="update-cart" title="<?php echo $this->__('Add All to Order') ?>" onclick="submitForm(this)" class="button btn-add"><span><span><?php echo $this->__('UPDATE CURRENT ORDER') ?></span></span></button>
 
 		<a title="<?php echo $this->__('Checkout') ?>" class="button checkout-button" href="<?php echo $this->getUrl('checkout/onepage', array('_secure'=>true)) ?>">
                             <?php echo $this->__('PLACE ORDER') ?>
@@ -240,7 +240,11 @@
 	     	</tfoot>
 	    </table>	        
     	</div>    
-    	<div class="in-cart"><button type="submit" title="<?php echo $this->__('Add All to Order') ?>" onclick="submitForm(this)" class="button btn-add"><span><span><?php echo $this->__('UPDATE CURRENT ORDER') ?></span></span></button></div>
+    	<div class="in-cart"><?php /*<button type="submit" title="<?php echo $this->__('Add All to Order') ?>" onclick="submitForm(this)" class="button btn-add"><span><span><?php echo $this->__('UPDATE CURRENT ORDER') ?></span></span></button> */ ?>
+    				<a title="<?php echo $this->__('Checkout') ?>" class="button checkout-button" href="<?php echo $this->getUrl('checkout/onepage', array('_secure'=>true)) ?>">
+                            <?php echo $this->__('PLACE ORDER') ?>
+                        </a>
+    	</div>
 	</form>
     
 	<script type="text/javascript">
@@ -275,6 +279,10 @@
 				 if(<?php echo (($this->getMode()!='grid') ? "true" : "false")?>) {
 			        jQuery('body').addClass('catalog-category-view-bestellijst');			       
 			     }
+
+			     jQuery('.qty-wraper input').blur(function() {
+			     	jQuery('#update-cart').trigger( "click" );
+			     });
 	
 				jQuery('.simple-qty').focusout(function() {
 					var base_url = jQuery("#base_url").val();

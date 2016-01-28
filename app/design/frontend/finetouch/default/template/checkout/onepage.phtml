@@ -34,7 +34,8 @@
     $ol_total = $this->helper('checkout/cart')->getQuote()->getGrandTotal();
     if($ol_total > $ol_max)
     {
-        echo $this->getLayout()->createBlock('core/messages')->addNotice($ol_msg)->toHtml();
+        //echo $this->getLayout()->createBlock('core/messages')->addNotice($ol_msg)->toHtml();
+        echo $ol_msg;
     }
     ?>
 <script type="text/javascript" src="<?php echo $this->getJsUrl('varien/accordion.js') ?>"></script>

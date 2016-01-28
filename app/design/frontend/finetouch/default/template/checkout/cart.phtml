@@ -52,7 +52,7 @@
     $ol_total = $this->helper('checkout/cart')->getQuote()->getGrandTotal();
     if($ol_total > $ol_max)
     {
-        echo $this->getLayout()->createBlock('core/messages')->addNotice($ol_msg)->toHtml();
+        echo $ol_msg;
     }
     ?>
     <?php echo $this->getMessagesBlock()->toHtml() ?>
