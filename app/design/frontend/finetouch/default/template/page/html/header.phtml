@@ -94,10 +94,11 @@
                     $ol_max = Mage::getStoreConfig('payment/purchaseorder/max_order_total');
                     $ol_total = $this->helper('checkout/cart')->getQuote()->getGrandTotal();
                     $ol_rem = $ol_max - $ol_total;
+                    $ol_rem = ($ol_rem<0)?0:$ol_rem;
                     ?>
                 </div>
-                    <div class="skip-link skip-cart  no-count" style="float: none;clear: both;">
-                        <span class="label">Remaining Credit: <span style="color:red;">$<?= $ol_rem?></span></span>
+                    <div class="skip-link skip-cart  no-count" style="float:right;width:100%;clear:both;background:transparent;margin-top:-10px;">
+                        <span class="label">Remaining Credit: <span style="color:#616161;">$<?= $ol_rem?></span></span>
                     </div>
 
             </div>

@@ -20,7 +20,7 @@
    	<form id="b2borderlist_submitform" method="post" action="<?php echo $this->getUrl('orderlist/cart/additems') ?>">
 		<div class="in-cart-top"><button style="display:none;" type="submit" id="update-cart" title="<?php echo $this->__('Add All to Order') ?>" onclick="submitForm(this)" class="button btn-add"><span><span><?php echo $this->__('UPDATE CURRENT ORDER') ?></span></span></button>
 
-		<a title="<?php echo $this->__('Checkout') ?>" class="button checkout-button" href="<?php echo $this->getUrl('checkout/onepage', array('_secure'=>true)) ?>">
+		<a title="<?php echo $this->__('Checkout') ?>" class="button checkout-button" href="<?php echo $this->getUrl('checkout/cart'); ?>">
                             <?php echo $this->__('PLACE ORDER') ?>
                         </a>
 		</div>
@@ -241,7 +241,7 @@
 	    </table>	        
     	</div>    
     	<div class="in-cart"><?php /*<button type="submit" title="<?php echo $this->__('Add All to Order') ?>" onclick="submitForm(this)" class="button btn-add"><span><span><?php echo $this->__('UPDATE CURRENT ORDER') ?></span></span></button> */ ?>
-    				<a title="<?php echo $this->__('Checkout') ?>" class="button checkout-button" href="<?php echo $this->getUrl('checkout/onepage', array('_secure'=>true)) ?>">
+    				<a title="<?php echo $this->__('Checkout') ?>" class="button checkout-button" href="<?php echo $this->getUrl('checkout/cart'); ?>">
                             <?php echo $this->__('PLACE ORDER') ?>
                         </a>
     	</div>
