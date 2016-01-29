@@ -31,7 +31,7 @@
     <?php //Mage::getSingleton('core/session')->addNotice($ol_msg); ?> 
     <?php 
     $ol_max = Mage::getStoreConfig('payment/purchaseorder/max_order_total');
-    $ol_total = $this->helper('checkout/cart')->getQuote()->getGrandTotal();
+    $ol_total = $this->helper('checkout/cart')->getQuote()->getSubtotal();
     if($ol_total > $ol_max)
     {
         //echo $this->getLayout()->createBlock('core/messages')->addNotice($ol_msg)->toHtml();
