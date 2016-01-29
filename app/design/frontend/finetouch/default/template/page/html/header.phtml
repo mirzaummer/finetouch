@@ -89,7 +89,7 @@
 
                 <!-- Cart -->
 
-                <div class="header-minicart pull-right">
+                <div class="header-minicart pull-right" style="float:right !important;">
                     <?php echo $this->getChildHtml('minicart_head'); 
                     $ol_max = Mage::getStoreConfig('payment/purchaseorder/max_order_total');
                     $ol_total = $this->helper('checkout/cart')->getQuote()->getSubtotal();
