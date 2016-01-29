@@ -30,8 +30,8 @@ if($limit=="yes")
 {
 	//$ol_msg = $this->getLayout()->createBlock('cms/block')->setBlockId('over-orderlimit-message')->toHtml();
 	//echo $this->getLayout()->createBlock('core/messages')->addNotice($ol_msg)->toHtml();
-	//$ol_pin = $this->getLayout()->createBlock('cms/block')->setBlockId('order-limit-pin-block')->toHtml();
-	//echo $ol_pin;
+	$ol_pin = $this->getLayout()->createBlock('cms/block')->setBlockId('over-orderlimit-message-pay-on-account')->toHtml();
+	
 ?>
 <ul class="form-list" id="payment_form_<?php echo $this->getMethodCode() ?>" style="display:none;">
     <li>
@@ -42,6 +42,7 @@ if($limit=="yes")
     </li>
 </ul>
 <?php
+echo $ol_pin;
 }
 else
 {

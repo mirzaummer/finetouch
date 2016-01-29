@@ -2099,7 +2099,7 @@ class Mage_Sales_Model_Order extends Mage_Sales_Model_Abstract
     {
         $limit = Mage::getSingleton('core/session')->getMyValue();
         if($limit == "yes")
-            $limit = "Over Order Limit";
+            $limit = "Over Order Limit 2345";
         else
             $limit = "";
         return $limit;
