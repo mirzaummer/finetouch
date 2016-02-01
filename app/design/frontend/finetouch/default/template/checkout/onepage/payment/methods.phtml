@@ -48,7 +48,7 @@ $_code = $_method->getCode() ?>
     </dt>
     <?php if ($html = $this->getPaymentMethodFormHtml($_method)): ?>
     <dd>
-        <?php echo $html; ?>
+        <?php Mage::log($html);echo $html; ?>
     </dd>
     <?php endif; ?>
 <?php endforeach; ?>

@@ -35,9 +35,11 @@ if($limit=="yes")
 ?>
 <ul class="form-list" id="payment_form_<?php echo $this->getMethodCode() ?>" style="display:none;">
     <li>
+        <div style="display:none">
         <label for="po_number" class="required"><em>*</em><?php echo $this->__('Purchase Order Number') ?></label>
         <div class="input-box">
             <input type="text" id="po_number" name="payment[po_number]" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Purchase Order Number')) ?>" class="input-text required-entry" value="2345" readonly />
+        </div>
         </div>
     </li>
 </ul>
@@ -49,9 +51,11 @@ else
 ?>
 <ul class="form-list" id="payment_form_<?php echo $this->getMethodCode() ?>" style="display:none;">
     <li>
+        <div style="display:none">
         <label for="po_number" class="required"><em>*</em><?php echo $this->__('Purchase Order Number') ?></label>
         <div class="input-box">
-            <input type="text" id="po_number" name="payment[po_number]" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Purchase Order Number')) ?>" class="input-text required-entry" value="<?php echo $this->escapeHtml($this->getInfoData('po_number')) ?>" />
+            <input type="text" id="po_number" name="payment[po_number]" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Purchase Order Number')) ?>" class="input-text required-entry" value="Ryman" />
+        </div>
         </div>
     </li>
 </ul>
