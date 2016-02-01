@@ -112,6 +112,7 @@ td.amount .input-text.qty {
 	text-align: left;
 	vertical-align: middle;
 	text-transform: capitalize;
+	font-size: 16px;
 }
 .table-category td.sku,.table-category td.sku-name{padding-top: 6px;}
 
