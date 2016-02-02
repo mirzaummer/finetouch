@@ -42,15 +42,7 @@
     <?php endif; ?>
     <h1><?php echo $_helper->categoryAttribute($_category, $_category->getName(), 'name') ?></h1>
 </div>
-    <?php 
-    $ol_msg = $this->getLayout()->createBlock('cms/block')->setBlockId('over-orderlimit-message')->toHtml();
-    $ol_max = Mage::getStoreConfig('payment/purchaseorder/max_order_total');
-    $ol_total = $this->helper('checkout/cart')->getQuote()->getSubtotal();
-    if($ol_total > $ol_max)
-    {
-        echo $ol_msg;
-    }
-    ?>
+
 <?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
 
 

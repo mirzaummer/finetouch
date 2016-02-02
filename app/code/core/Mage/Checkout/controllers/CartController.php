@@ -600,9 +600,9 @@ class Mage_Checkout_CartController extends Mage_Core_Controller_Front_Action
      */
     public function ajaxDeleteAction()
     {
-        if (!$this->_validateFormKey()) {
+        /*if (!$this->_validateFormKey()) {
             Mage::throwException('Invalid form key');
-        }
+        }*/
         $id = (int) $this->getRequest()->getParam('id');
         $result = array();
         if ($id) {
@@ -625,6 +625,7 @@ class Mage_Checkout_CartController extends Mage_Core_Controller_Front_Action
 
         $this->getResponse()->setHeader('Content-type', 'application/json');
         $this->getResponse()->setBody(Mage::helper('core')->jsonEncode($result));
+        $this->_redirect('checkout/cart');
     }
 
     /**
