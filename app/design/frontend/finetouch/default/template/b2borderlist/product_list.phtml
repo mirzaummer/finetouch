@@ -12,15 +12,21 @@
 <?php if(!$_productCollection->count()): ?>
 <p class="note-msg"><?php echo $this->__('There are no products matching the selection.') ?></p>
 <?php else: ?>
-<?php if($this->getMode()!='grid'){?><div class="page-title"><h1><?php echo $this->__("Order List") ?></h1></div><?php }?>
+<?php if($this->getMode()!='grid'){?>
+<div class="title-wrap-order-list" style="width: 100%;float: left;">
+<div class="page-title page-title-order-list" style="width: 50%;float: left;"><h1><?php echo $this->__("Order List") ?></h1></div>
+<div class="page-title-2">ORDER TOTAL : <span id="order-total" style="color:#616161;">$0</span></div>
+</div>
+
+<?php }?>
 <div class="category-products">
     <?php echo $this->getToolbarHtml() ?>
     <?php // List mode ?>    
     <?php $_iterator = 0; ?>
    	<form id="b2borderlist_submitform" method="post" action="<?php echo $this->getUrl('orderlist/cart/additems') ?>">
-		<div class="in-cart-top"><button style="display:none;" type="submit" id="update-cart" title="<?php echo $this->__('Add All to Order') ?>" onclick="submitForm(this)" class="button btn-add"><span><span><?php echo $this->__('UPDATE CURRENT ORDER') ?></span></span></button>
+		<div class="in-cart-top"><button type="submit" id="update-cart" title="<?php echo $this->__('Add All to Order') ?>" onclick="submitForm(this)" class="button btn-add"><span><span><?php echo $this->__('PLACE ORDER') ?></span></span></button>
 
-		<a title="<?php echo $this->__('PLACE ORDER') ?>" class="button checkout-button" href="<?php echo $this->getUrl('checkout/cart'); ?>">
+		<a style="display:none;" title="<?php echo $this->__('PLACE ORDER') ?>" class="button checkout-button" href="<?php echo $this->getUrl('checkout/cart'); ?>">
                             <?php echo $this->__('PLACE ORDER') ?>
                         </a>
 		</div>
@@ -240,8 +246,8 @@
 	     	</tfoot>
 	    </table>	        
     	</div>    
-    	<div class="in-cart"><?php /*<button type="submit" title="<?php echo $this->__('Add All to Order') ?>" onclick="submitForm(this)" class="button btn-add"><span><span><?php echo $this->__('UPDATE CURRENT ORDER') ?></span></span></button> */ ?>
-    				<a title="<?php echo $this->__('PLACE ORDER') ?>" class="button checkout-button" href="<?php echo $this->getUrl('checkout/cart'); ?>">
+    	<div class="in-cart"><button type="submit" id="update-cart" title="<?php echo $this->__('Add All to Order') ?>" onclick="submitForm(this)" class="button btn-add"><span><span><?php echo $this->__('PLACE ORDER') ?></span></span></button>
+    				<a style="display:none" title="<?php echo $this->__('PLACE ORDER') ?>" class="button checkout-button" href="<?php echo $this->getUrl('checkout/cart'); ?>">
                             <?php echo $this->__('PLACE ORDER') ?>
                         </a>
     	</div>
@@ -280,8 +286,19 @@
 			        jQuery('body').addClass('catalog-category-view-bestellijst');			       
 			     }
 
-			     jQuery('.qty-wraper input').blur(function() {
-			     	jQuery('#update-cart').trigger( "click" );
+			     jQuery('.qty-wraper input').on('input', function() {
+			     	var tot =0;
+			     	jQuery('.table-category tbody tr').each(function() {
+						  var price = jQuery( this ).children('td.sort-price').html();
+						  price = price.slice(2);
+						  var qty = jQuery(this).find('td.amount input').val();
+						  tot = tot+ (price*qty);
+
+						  
+						});
+			     	console.log(tot);
+			     	jQuery('#order-total').hide();
+			     	jQuery('#order-total').text( '$'+tot.toFixed(2) ).fadeIn(500);
 			     });
 	
 				jQuery('.simple-qty').focusout(function() {

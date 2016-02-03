@@ -65,8 +65,8 @@ class Ecomwise_B2BOrderlist_CartController extends Mage_Checkout_CartController
 		Mage::getSingleton('checkout/session')->setCartWasUpdated(true);
 		Mage::helper('b2borderlist/cart')->addReportMessages();
 		
-	
-		$this->_redirectReferer();
+		$this->_redirect('checkout/cart');
+		//$this->_redirectReferer();
 		
 	}
 	

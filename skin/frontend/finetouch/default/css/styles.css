@@ -12212,3 +12212,32 @@ color:#333333;
 .promo_home a {
     color: #ffffff;
 }
+.page-title-2 {
+    width: 50%;
+    float: right;
+    text-align: right; font-family: 'montserratbold';
+    font-size: 21px;
+    color: #383838;
+    padding-bottom: 0px;
+    margin-top: 5px;
+}
+
+.page-title-order-list{
+    width: 50%;
+    float: left;
+    margin-bottom: 0px;
+    border-bottom: 0px;
+  }
+    
+  .title-wrap-order-list{
+    width: 100%;
+    float: left;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 20px;
+  }
+    
+  .page-title-order-list h1{
+    margin-bottom: 6px !important;
+    border-bottom: 0px !important;
+    padding: 0px !important;
+  }
