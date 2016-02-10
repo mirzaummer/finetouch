@@ -12241,3 +12241,25 @@ color:#333333;
     border-bottom: 0px !important;
     padding: 0px !important;
   }
+
+  .button-center{ 
+    text-align: center !important;
+    margin: 0 auto; 
+    width: 46% !important; 
+    border: 0px
+  }
+
+  .btn-center{
+    width: 50%;
+    max-width: 220px;
+  }
+    
+  .f-center{
+    width: 50%;
+    float: left !important;
+    max-width: 220px;
+  }
+    
+  .f-center a{ 
+    padding: 14px 10px !important;
+  }

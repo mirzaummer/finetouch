@@ -25,7 +25,18 @@
  */
 ?>
 <div class="page-title">
-    <h1><?php echo $this->__('Your order has been received') ?></h1>
+    <h1><?php 
+    $myValue=Mage::getSingleton('core/session')->getMyValue();
+    if($myValue == "yes")
+    {
+        echo $this->__('Your Order Has Been Received And Is Waiting Approval');
+    }
+    else
+    {
+        echo $this->__('Your Order Has Being Processed');
+    }
+    Mage::getSingleton('core/session')->unsMyValue();
+     ?></h1>
 </div>
 <?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
 <h2 class="sub-title"><?php echo $this->__('Thank you for your Order!') ?></h2>
