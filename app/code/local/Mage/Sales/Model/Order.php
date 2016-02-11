@@ -2105,6 +2105,16 @@ class Mage_Sales_Model_Order extends Mage_Sales_Model_Abstract
         return $limit;
     }
 
+    public function getOrderLimitMessage()
+    {
+        $limit = Mage::getSingleton('core/session')->getMyValue();
+        if($limit == "yes")
+            $limit = "We will dispatch your order as soon as it is approved and send you an email when it is dispatched.";
+        else
+            $limit = "We will send you an email when your order is dispatched.";
+        return $limit;
+    }
+
     /**
      * Processing object before save data
      *

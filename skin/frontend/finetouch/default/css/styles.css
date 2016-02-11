@@ -12252,6 +12252,8 @@ color:#333333;
   .btn-center{
     width: 50%;
     max-width: 220px;
+    float: right !important;
+    margin-right: 46px !important;
   }
     
   .f-center{
