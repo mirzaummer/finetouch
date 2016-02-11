@@ -112,12 +112,12 @@ abstract class Mage_Checkout_Block_Onepage_Abstract extends Mage_Core_Block_Temp
         if ($this->isCustomerLoggedIn()) {
             $options = array();
             foreach ($this->getCustomer()->getAddresses() as $address) {
-                if($address->getId() == $this->getAddress()->getCustomerAddressId())
-                {
+                //if($address->getId() == $this->getAddress()->getCustomerAddressId())
+                //{
                      $options[] = array(
                     'value' => $address->getId(),
                     'label' => $address->format('oneline'));
-                }
+                //}
 
             }
             Mage::log($options);
