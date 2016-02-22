@@ -25,10 +25,14 @@
  */
 ?>
 <form id="co-shipping-method-form" action="">
+
 	<p>If the order is urgent can you please <a href="mailto:lois@finetouchdisposables..co.nz">email us</a> regarding delivery options or phone <strong>0800 82 82 82</strong> and ask for Lois.</p>
+
     <div id="checkout-shipping-method-load">
         <?php echo $this->getChildHtml('available') ?>
+
     </div>
+    <?php echo $this->getChildHtml('mbcomments') ?>
     <script type="text/javascript">
     //<![CDATA[
         var shippingMethod = new ShippingMethod('co-shipping-method-form', "<?php echo $this->getUrl('checkout/onepage/saveShippingMethod') ?>");

@@ -748,3 +748,11 @@ p.sku {
 .price-box .price-including-tax {
   display: block;
 }
+.details-order{
+    font-size: 15px;
+    font-style: italic;
+    margin: 0 auto;
+    /* margin-left: 100px; */
+    text-align: justify;
+    padding-top: 30px;
+}

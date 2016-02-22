@@ -1355,8 +1355,44 @@ class Mage_Sales_Model_Order extends Mage_Sales_Model_Abstract
 
         $mailer->send();
 
-        $this->setEmailSent(true);
-        $this->_getResource()->saveAttribute($this, 'email_sent');
+        //To send order approval email for the regional manager
+        $limit = Mage::getSingleton('core/session')->getMyValue();
+
+        if($templateId ==32 && $limit == "yes")
+        {
+            /** @var $mailer Mage_Core_Model_Email_Template_Mailer */
+            $mailer = Mage::getModel('core/email_template_mailer');
+            /** @var $emailInfo Mage_Core_Model_Email_Info */
+            $emailInfo = Mage::getModel('core/email_info');
+            $emailInfo->addTo('mirza.ekm@gmail.com', $customerName);
+
+            $mailer->addEmailInfo($emailInfo);
+
+            // Set all required params and send emails
+            $mailer->setSender(Mage::getStoreConfig(self::XML_PATH_EMAIL_IDENTITY, $storeId));
+            $mailer->setStoreId($storeId);
+            $mailer->setTemplateId(34);
+            $mailer->setTemplateParams(array(
+                'order'        => $this,
+                'billing'      => $this->getBillingAddress(),
+                'payment_html' => $paymentBlockHtml
+            ));
+
+            /** @var $emailQueue Mage_Core_Model_Email_Queue */
+            $emailQueue = Mage::getModel('core/email_queue');
+            $emailQueue->setEntityId($this->getId())
+                ->setEntityType(self::ENTITY)
+                ->setEventType(self::EMAIL_EVENT_NAME_NEW_ORDER)
+                ->setIsForceCheck(!$forceMode);
+
+            $mailer->send();
+
+            $this->setEmailSent(true);
+            $this->_getResource()->saveAttribute($this, 'email_sent');
+        }
+        
+
+
 
         return $this;
     }
